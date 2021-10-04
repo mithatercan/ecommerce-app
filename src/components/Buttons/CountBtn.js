@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-export default class CountBtn extends Component {
+class CountBtn extends Component {
   render() {
-    return <div>{this.props.count === "decrease" ? "-" : "+"}</div>;
+    return <button>{this.props.type === "decrease" ? "-" : "+"}</button>;
   }
 }
+
+export default CountBtn;

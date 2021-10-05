@@ -15,7 +15,7 @@ const fetchProductById = async (id) => {
 
   const resultData = await result.json();
 
-  console.log(resultData.data.product);
+  return resultData.data.product;
 };
 
 export default fetchProductById;

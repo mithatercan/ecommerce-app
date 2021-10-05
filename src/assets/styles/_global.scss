@@ -1,8 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   font-size: 100%;
   line-height: 1;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+}
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 .txt-ac {
@@ -12,17 +21,29 @@
   display: flex;
 }
 
-.df-jc-c {
-  display: flex;
+.jc-c {
   justify-content: center;
 }
 
-.df-jc-sb {
-  display: flex;
+.jc-sb {
   justify-content: space-between;
 }
-
-.df-ai-c {
-  display: flex;
+.jc-se {
+  justify-content: space-evenly;
+}
+.jc-fe {
+  justify-content: flex-end;
+}
+.ai-c {
   align-items: center;
+}
+.ai-sh {
+  align-items: stretch;
+}
+.fd-c {
+  flex-direction: column;
+}
+
+.fw-w {
+  flex-wrap: wrap;
 }

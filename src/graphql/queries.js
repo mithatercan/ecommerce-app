@@ -9,6 +9,7 @@ export const dataQuery = `{
       inStock
       description
       brand
+      gallery
       attributes{
        name
         id
@@ -38,6 +39,7 @@ export const productByIdQuery = (id) => {
       inStock
       description
       brand
+      gallery
       attributes{
        name
         id

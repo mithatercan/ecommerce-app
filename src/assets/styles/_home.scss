@@ -1,0 +1,35 @@
+.home {
+  width: 89%;
+  margin: 0 auto;
+
+  &__inner {
+    margin-top: 3em;
+  }
+  h1 {
+    font-size: $font-xl;
+    font-weight: 200;
+  }
+}
+
+.gallery {
+  width: 500px;
+  height: 600px;
+  img {
+    object-fit: contain;
+  }
+  // &__previews{
+
+  // }
+  &__preview {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+  &__main {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.product-detail__inner {
+}

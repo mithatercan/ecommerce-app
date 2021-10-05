@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class CartPreview extends Component {
   render() {
-    return <div className="cart-preview">cart preview</div>;
+    return <div className="header__nav--cart--preview">cart preview</div>;
   }
 }
 

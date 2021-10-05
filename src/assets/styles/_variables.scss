@@ -1,5 +1,6 @@
 //colors
 $green: #5ece7b;
+$disabled: #275834;
 $smoothBlack: #1d1f22;
 $lightGray: #f3f3f3;
 $darkGray: #727272;
@@ -12,4 +13,4 @@ $font-lg: 1.4em;
 $font-xl: 1.8em;
 
 // Shadows
-$smoothShadow: (0 0 30px 0 $lightGray);
+$smoothShadow: (0 3px 30px 0 $lightGray);

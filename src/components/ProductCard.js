@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BsCart2 } from "react-icons/bs";
+import { connect } from "react-redux";
 import getSymbolFromCurrency from "currency-symbol-map";
 import { Link } from "react-router-dom";
 class productCard extends Component {
@@ -9,7 +10,9 @@ class productCard extends Component {
   render() {
     const { product } = this.props;
     return (
-      <Link to={`/product/detail/id=${product.id}`}>
+      <Link
+        to={`/product/detail/category=${product.category}/id=${product.id}`}
+      >
         <div
           className={`product-card df fd-c jc-sb ${
             !product.inStock && "out-of-stock"
@@ -23,8 +26,13 @@ class productCard extends Component {
           <footer className="product-card__footer ">
             <p>{product.name}</p>
             <small>
-              {getSymbolFromCurrency(product.prices[0].currency)}
-              {product.prices[0].amount}
+              {product.prices.map((price) => {
+                if (price.currency === this.props.currency) {
+                  return (
+                    getSymbolFromCurrency(price.currency) + " " + price.amount
+                  );
+                }
+              })}
             </small>
           </footer>
 
@@ -35,4 +43,7 @@ class productCard extends Component {
   }
 }
 
-export default productCard;
+const mapStateToProps = (state) => ({
+  currency: state.currency.data,
+});
+export default connect(mapStateToProps)(productCard);

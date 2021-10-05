@@ -23,7 +23,7 @@ class App extends Component {
           ))}
           <Route
             exact
-            path="/product/detail/id=:id"
+            path="/product/detail/category=:category/id=:id" //!sonradan bak
             component={ProductDetail}
           />
           <Route exact path="/" component={Home} />

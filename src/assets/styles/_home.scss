@@ -1,7 +1,6 @@
 .home {
   width: 89%;
   margin: 0 auto;
-
   &__inner {
     margin-top: 3em;
   }
@@ -9,27 +8,15 @@
     font-size: $font-xl;
     font-weight: 200;
   }
-}
-
-.gallery {
-  width: 500px;
-  height: 600px;
-  img {
-    object-fit: contain;
+  &__products--container {
+    margin: 3em 0;
+    gap: 5em;
+    @include breakpoint-down(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3em 5em;
+    }
+    @include breakpoint-down(small) {
+      grid-template-columns: 1fr;
+    }
   }
-  // &__previews{
-
-  // }
-  &__preview {
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
-  }
-  &__main {
-    width: 400px;
-    height: 400px;
-  }
-}
-
-.product-detail__inner {
 }

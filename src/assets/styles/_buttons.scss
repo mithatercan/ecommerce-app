@@ -1,0 +1,31 @@
+.add-cta {
+  cursor: pointer;
+  background-color: $green;
+  color: $white;
+  border: none;
+  padding: 0.7em 4em;
+  &__passive {
+    opacity: 0.7;
+    background-color: $disabled;
+  }
+}
+
+.attribute-cta {
+  &.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  width: 4.1em;
+  height: 2em;
+  background-color: $white;
+  color: $smoothBlack;
+  border: 1px solid $smoothBlack;
+  margin-right: 0.4em;
+  cursor: pointer;
+  &:hover {
+    background-color: $smoothBlack;
+    color: $white;
+    transition: 0.1s;
+  }
+}

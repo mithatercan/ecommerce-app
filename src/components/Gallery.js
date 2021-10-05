@@ -3,21 +3,15 @@ export class Gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: "",
+      image: this.props.gallery[0],
     };
   }
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        image: this.props.gallery[0],
-      });
-    }, 500);
-  }
+
   render() {
     const { gallery } = this.props;
     const { image } = this.state;
     return (
-      <div className="gallery df jc-sb ai-c">
+      <div className="gallery df ai-c">
         {!gallery ? (
           "...loading"
         ) : (

@@ -12,16 +12,17 @@ class Home extends Component {
   }
   render() {
     const { categories } = this.props.product;
-    const content = this.props.content;
+    const { content } = this.props;
     return (
       <div className="home">
         <div className="home__inner">
           <h1>{content && content.toUpperCase()}</h1>
-          <div className="home__products--container df jc-sb ai-c fw-w">
+          <div className="home__products--container dg g-col-3 g-gap-md">
             {categories.map((category) => {
-              if (category.name == this.props.content) {
-                return category.products.map((product) => (
+              if (category.name === this.props.content) {
+                return category.products.map((product, idx) => (
                   <ProductCard
+                    key={idx}
                     onProductCard={(product) => {
                       this.setState({
                         display: !this.state.display,

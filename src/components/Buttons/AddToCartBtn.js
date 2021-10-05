@@ -4,18 +4,16 @@ import { addToCart } from "../../redux/slicers/cartSlice";
 class AddToCartBtn extends Component {
   handleClick = () => {
     store.dispatch(addToCart(this.props.product));
-    console.log(this.props.product);
   };
   render() {
     const { passive } = this.props;
-    console.log(passive);
     return (
       <button
-        disabled={!passive}
+        disabled={passive}
         onClick={() => this.handleClick()}
-        className="add-cta"
+        className={`add-cta ${passive && "add-cta__passive"}`}
       >
-        ADD TO CART
+        {passive ? "OUT OF STOCK" : "ADD TO CART"}
       </button>
     );
   }

@@ -6,7 +6,7 @@ class Layout extends Component {
       <div className="layout">
         <Header />
         <main className="layout__main df">{this.props.children}</main>
-        <footer className="layout__footer txt-ac">Made with love</footer>
+        <footer className="layout__footer txt-ac">Made with ❤️</footer>
       </div>
     );
   }

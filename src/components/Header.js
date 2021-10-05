@@ -7,10 +7,12 @@ import CartPreview from "./CartPreview";
 import { withRouter } from "react-router-dom";
 
 class Header extends Component {
+  componentWillUnmount() {
+    console.log(this.props.match.params);
+  }
   render() {
     const { product, cart } = this.props;
     const { pathname } = this.props.location;
-    console.log(pathname);
     return (
       <header className="header ">
         <nav className="header__nav df ai-c jc-sb">

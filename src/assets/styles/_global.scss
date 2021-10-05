@@ -13,10 +13,18 @@ a {
   text-decoration: none;
   color: #000;
 }
-
+li {
+  list-style: none;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
 .txt-ac {
   text-align: center;
 }
+
+// FLEX BOX
 .df {
   display: flex;
 }
@@ -46,4 +54,41 @@ a {
 
 .fw-w {
   flex-wrap: wrap;
+}
+
+// DISPLAY GRID
+
+.dg {
+  display: grid;
+}
+
+// GRID TEPLATE COLUMNS
+.g-col-1 {
+  grid-template-columns: 1fr;
+}
+.g-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.g-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+// GRID ALIGNMENT
+.g-ji-c {
+  justify-items: center;
+}
+
+.g-ai-c {
+  align-items: center;
+}
+
+// GRID GAP
+.g-gap-sm {
+  gap: 3em 5em;
+}
+.g-gap-md {
+  gap: 5em 7em;
+}
+.g-gap-lg {
+  gap: 6em 8em;
 }

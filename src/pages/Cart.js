@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 class Cart extends Component {
   render() {
+    const { cart } = this.props;
+    console.log(cart);
     return (
       <div>
-        {this.props.cart.map((product) => (
+        {/* {cart.map((product) => (
           <p>{product.name}</p>
-        ))}
+        ))} */}
       </div>
     );
   }

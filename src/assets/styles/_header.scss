@@ -10,7 +10,9 @@
   &__nav {
     width: 90%;
     margin: 0 auto;
-
+    @include breakpoint-down(small) {
+      display: none;
+    }
     a {
       margin: 0 10px;
       height: 100%;
@@ -76,115 +78,5 @@
         cursor: pointer;
       }
     }
-  }
-}
-// LAYOUT
-.layout {
-  &__footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 0.6em 0;
-  }
-}
-
-// PRODUCT CARD
-.product-card {
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  margin: 4em 0;
-  width: 300px;
-  height: 300px;
-  transition: 0.2s;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid $lightGray;
-  box-shadow: 0px 1.1px 2.7px rgba(0, 0, 0, 0.003),
-    0px 2.8px 6.9px rgba(0, 0, 0, 0.004), 0px 5.7px 14.2px rgba(0, 0, 0, 0.006),
-    0px 11.7px 29.2px rgba(0, 0, 0, 0.007), 0px 32px 80px rgba(0, 0, 0, 0.01);
-  &:hover {
-    box-shadow: $smoothShadow;
-    svg {
-      right: 1.1em;
-      bottom: 1.5em;
-    }
-  }
-  svg {
-    font-size: $font-md;
-    position: absolute;
-    bottom: -100%;
-    right: 1.1em;
-    background-color: $green;
-    color: $white;
-    transition: 0.4s;
-    border-radius: 50%;
-    padding: 10px;
-  }
-  &__top {
-    &--img {
-      width: 100%;
-      height: 100%;
-      img {
-        width: 100%;
-        height: 14em;
-        object-fit: contain;
-      }
-    }
-  }
-  &__footer {
-    font-size: $font-sm;
-
-    small {
-      display: block;
-    }
-    p {
-      color: $darkGray;
-      margin: 0.7em 0;
-    }
-  }
-}
-
-// HOME PAGE
-
-// SPINNER
-
-.spinner {
-  width: 100vw;
-  height: 100vh;
-  background-color: $white;
-
-  &__inner {
-    width: 70px;
-    height: 70px;
-    border: 20px solid $green;
-    border-right: 20px solid transparent;
-    animation: spin 1s infinite;
-    border-radius: 50%;
-  }
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(720deg);
-  }
-}
-
-.out-of-stock {
-  &::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: $font-xl;
-    font-weight: 300;
-    width: 100%;
-    height: 100%;
-    content: "OUT OF STOCK";
-    color: $smoothBlack;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 230, 230);
-    opacity: 0.6;
   }
 }

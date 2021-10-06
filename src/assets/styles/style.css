@@ -294,19 +294,31 @@ button {
   margin: auto;
 }
 
-.cart-product-card img {
+.cart-product-card__right--btns {
+  margin-right: 1em;
+}
+
+.cart-product-card--sm img {
   width: 6.25em;
   height: 6.25em;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.cart-product-card p {
+.cart-product-card--sm p {
   margin: 0.6em 0;
 }
 
-.cart-product-card__right--btns {
-  margin-right: 1em;
+.cart-product-card--lg {
+  border-bottom: 1px solid #f3f3f3;
+  border-top: 1px solid #f3f3f3;
+}
+
+.cart-product-card--lg img {
+  width: 16em;
+  height: 16em;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .cart {
@@ -553,11 +565,17 @@ button {
   color: #fff;
   border: none;
   padding: 0.7em 4em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .add-cta__passive {
   opacity: 0.7;
   background-color: #275834;
+}
+
+.add-cta:hover, .view-bag-cta:hover, .check-out-cta:hover {
+  opacity: 0.7;
 }
 
 .attribute-cta {
@@ -590,6 +608,11 @@ button {
   border: 1px solid #1d1f22;
 }
 
+.view-bag-cta:hover {
+  background-color: #1d1f22;
+  color: #fff;
+}
+
 .check-out-cta {
   padding: 0.7em 2.5em;
 }
@@ -597,7 +620,13 @@ button {
 .count-cta {
   width: 1.3em;
   height: 1.3em;
+  cursor: pointer;
   border: 1px solid #1d1f22;
+}
+
+.count-cta:hover {
+  background-color: #1d1f22;
+  color: #fff;
 }
 
 .home {

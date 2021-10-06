@@ -2,28 +2,21 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import getSymbolFromCurrency from "currency-symbol-map";
 import CountBtn from "./Buttons/CountBtn";
+import getCurrency from "../utils/getCurrency";
 
 class CartProductCard extends Component {
   render() {
-    const { product, currency } = this.props;
+    const { product, currency, size } = this.props;
     return (
-      <div className="cart-product-card df ai-c jc-sb">
+      <div
+        className={`cart-product-card cart-product-card--${size} df ai-c jc-sb`}
+      >
         <div className="cart-product-card__left">
-          <h3>{product.brand}</h3>
+          <p>{product.brand}</p>
           <p>{product.name}</p>
-          <small>
-            {product.prices.map((price) => {
-              if (price.currency === currency) {
-                return (
-                  getSymbolFromCurrency(price.currency) +
-                  " " +
-                  Math.floor(price.amount * product.quantity)
-                );
-              }
-            })}
-          </small>
+          <small>{getCurrency(product, currency)}</small>
         </div>
-        <div className="cart_product-card__right df">
+        <div className="cart_product-card__right df jc-sb">
           <div className="cart-product-card__right--btns df fd-c jc-se ai-c ">
             <CountBtn product={product} type="increase" />
             {product.quantity}

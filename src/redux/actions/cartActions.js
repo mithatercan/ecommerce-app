@@ -1,17 +1,27 @@
 import store from "../store";
-import { addToCart } from "../slicers/cartSlice";
+import { addToCart, removeFromCart } from "../slicers/cartSlice";
 import { changeQuantity } from "../slicers/cartSlice";
 
+const checkQuantityToRemove = (payload) => {
+  const { product, type } = payload;
+  if (product.quantity === 1 && type === "decrease") {
+    return true;
+  }
+};
+
 export const changeQuantityAction = (payload) => {
-  store.dispatch(
-    changeQuantity({
-      id: payload.product.id,
-      quantity:
-        payload.type === "increase"
-          ? payload.product.quantity + 1
-          : payload.product.quantity - 1,
-    })
-  );
+  const { product, type } = payload;
+  if (checkQuantityToRemove(payload)) {
+    store.dispatch(removeFromCart(product.id));
+  } else {
+    store.dispatch(
+      changeQuantity({
+        id: product.id,
+        quantity:
+          type === "increase" ? product.quantity + 1 : product.quantity - 1,
+      })
+    );
+  }
 };
 
 export const addCartAction = (product) => {

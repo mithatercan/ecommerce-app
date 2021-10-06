@@ -8,8 +8,7 @@ import { withRouter } from "react-router-dom";
 
 class Header extends Component {
   render() {
-    const { product, cart } = this.props;
-    const { pathname } = this.props.location;
+    const { product, cart, location } = this.props;
     return (
       <header className="header ">
         <nav className="header__nav df ai-c jc-sb">
@@ -17,7 +16,7 @@ class Header extends Component {
             {product.categories.map((item) => (
               <Link
                 className={
-                  pathname === `/categories/${item.name}` &&
+                  location.pathname === `/categories/${item.name}` &&
                   "header__nav--active"
                 }
                 to={`/categories/${item.name}`}
@@ -36,7 +35,6 @@ class Header extends Component {
                 <BsCart2 className="header__nav--cart" />
                 <span>{cart.length}</span>
               </Link>
-
               <CartPreview />
             </div>
           </div>

@@ -40,17 +40,29 @@
 .cart-product-card {
   width: 90%;
   margin: auto;
-  img {
-    width: 6.25em;
-    height: 6.25em;
-    object-fit: contain;
-  }
-  p {
-    margin: 0.6em 0;
-  }
   &__right {
     &--btns {
       margin-right: 1em;
+    }
+  }
+  &--sm {
+    img {
+      width: 6.25em;
+      height: 6.25em;
+      object-fit: contain;
+    }
+    p {
+      margin: 0.6em 0;
+    }
+  }
+  &--lg {
+    border-bottom: 1px solid $lightGray;
+    border-top: 1px solid $lightGray;
+
+    img {
+      width: 16em;
+      height: 16em;
+      object-fit: contain;
     }
   }
 }

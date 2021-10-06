@@ -3,7 +3,7 @@ import Galerry from "../components/Gallery";
 import fetchProductById from "../utils/fetchProductById";
 import Spinner from "../components/Spinner";
 import ProductDetailSide from "../components/ProductDetailSide";
-class ProductDetail extends Component {
+class ProductDetailPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,4 +30,4 @@ class ProductDetail extends Component {
     );
   }
 }
-export default ProductDetail;
+export default ProductDetailPage;

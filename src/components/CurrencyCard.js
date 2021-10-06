@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import getSymbolFromCurrency from "currency-symbol-map";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { changeCurrencyAction } from "../redux/actions/currencyActions";
+import CurrencyCardList from "./CurrencyCardList";
 class CurrencyCard extends Component {
   constructor(props) {
     super(props);
@@ -11,6 +11,7 @@ class CurrencyCard extends Component {
     };
   }
   handleClick = (target) => {
+    //Redux dispatch action to change currency state.
     changeCurrencyAction(target.value);
     this.setState({
       ...this.state,
@@ -19,25 +20,19 @@ class CurrencyCard extends Component {
   };
 
   render() {
+    const { product } = this.props;
+    const { choosen } = this.state;
     return (
       <div className="currency-card">
         <span>
-          {this.state.choosen} <MdOutlineKeyboardArrowUp />
+          {choosen} <MdOutlineKeyboardArrowUp />
         </span>
-        <ul className="currency-card__data--list">
-          {this.props.product.currencies.map((item, itemIdx) => (
-            <li>
-              <data
-                onClick={(e) => this.handleClick(e.target)}
-                className="currency-card__data"
-                key={itemIdx}
-                value={item}
-              >
-                {getSymbolFromCurrency(item) + " " + item}
-              </data>
-            </li>
-          ))}
-        </ul>
+        <CurrencyCardList
+          product={product}
+          handleClick={(target) => {
+            this.handleClick(target);
+          }}
+        />
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ProductCard from "../components/ProductCard";
 
-class Home extends Component {
+class CategoryPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class Home extends Component {
           <h1>{content && content.toUpperCase()}</h1>
           <div className="home__products--container dg g-col-3 g-gap-md">
             {categories.map((category) => {
-              if (category.name === this.props.content) {
+              if (category.name === content) {
                 return category.products.map((product, idx) => (
                   <ProductCard
                     key={idx}
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => ({
   product: state.product.data,
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(CategoryPage);

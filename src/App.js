@@ -3,30 +3,31 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import Layout from "./components/Layout";
 import Spinner from "./components/Spinner";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import ProductDetail from "./pages/ProductDetail";
+import CategoryPage from "./pages/CategoryPage";
+import CartPage from "./pages/CartPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 class App extends Component {
   render() {
-    return this.props.product.length === 0 ? (
+    const { product } = this.props;
+    return product.length === 0 ? (
       <Spinner />
     ) : (
       <Router>
         <Layout>
           <Switch>
-            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/cart" component={CartPage} />
           </Switch>
-          {this.props.product.categories.map((item) => (
+          {product.categories.map((item) => (
             <Route exact path={`/categories/${item.name}`}>
-              <Home content={item.name} />
+              <CategoryPage content={item.name} />
             </Route>
           ))}
           <Route
             exact
-            path="/product/detail/category=:category/id=:id" //!sonradan bak
-            component={ProductDetail}
+            path="/product/detail/category=:category/id=:id"
+            component={ProductDetailPage}
           />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={CategoryPage} />
         </Layout>
       </Router>
     );

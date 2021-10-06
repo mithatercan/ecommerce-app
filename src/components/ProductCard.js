@@ -1,23 +1,20 @@
 import React, { Component } from "react";
 import { BsCart2 } from "react-icons/bs";
-import { connect } from "react-redux";
-import getSymbolFromCurrency from "currency-symbol-map";
 import { Link } from "react-router-dom";
+import getCurrency from "../utils/getCurrency";
+import { connect } from "react-redux";
+import checkInStock from "../utils/checkInStock";
 class productCard extends Component {
   handleClick = (product) => {
     this.props.onProductCard(product);
   };
   render() {
-    const { product } = this.props;
+    const { product, currency } = this.props;
     return (
       <Link
         to={`/product/detail/category=${product.category}/id=${product.id}`}
       >
-        <div
-          className={`product-card df fd-c jc-sb ${
-            !product.inStock && "out-of-stock"
-          }`}
-        >
+        <div className={`product-card df fd-c jc-sb ${checkInStock(product)}`}>
           <div className="product-card__top">
             <div className="product-card__top--img">
               <img src={product.gallery[0]} alt="product-card" />
@@ -25,15 +22,7 @@ class productCard extends Component {
           </div>
           <footer className="product-card__footer ">
             <p>{product.name}</p>
-            <small>
-              {product.prices.map((price) => {
-                if (price.currency === this.props.currency) {
-                  return (
-                    getSymbolFromCurrency(price.currency) + " " + price.amount
-                  );
-                }
-              })}
-            </small>
+            <small>{getCurrency(product, currency)}</small>
           </footer>
 
           <BsCart2 />
@@ -42,8 +31,8 @@ class productCard extends Component {
     );
   }
 }
-
 const mapStateToProps = (state) => ({
   currency: state.currency.data,
 });
+
 export default connect(mapStateToProps)(productCard);

@@ -1,8 +1,16 @@
 import React, { Component } from "react";
-
+import { changeQuantityAction } from "../../redux/actions/cartActions";
 class CountBtn extends Component {
+  handleClick = (type) => {
+    changeQuantityAction({ product: this.props.product, type: type });
+  };
   render() {
-    return <button>{this.props.type === "decrease" ? "-" : "+"}</button>;
+    const { type } = this.props;
+    return (
+      <button onClick={() => this.handleClick(type)} className="count-cta">
+        {type === "decrease" ? "-" : "+"}
+      </button>
+    );
   }
 }
 

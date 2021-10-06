@@ -7,14 +7,30 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-      state.data = [...state.data, ...action.paylaod];
+      if (!state.data.some((item) => item.id === action.payload.id)) {
+        state.data = [...state.data, action.payload];
+      }
     },
     removeFromCart: (state, action) => {
       state.data = state.filter((product) => product.id !== action.payload);
     },
+    changeQuantity: (state, action) => {
+      state.data = state.data.map((product) => {
+        if (product.id === action.payload.id) {
+          return {
+            ...product,
+            quantity: action.payload.quantity,
+          };
+        } else {
+          return {
+            ...product,
+          };
+        }
+      });
+    },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, changeQuantity } = cartSlice.actions;
 
 export default cartSlice.reducer;

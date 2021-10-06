@@ -7,9 +7,6 @@ import CartPreview from "./CartPreview";
 import { withRouter } from "react-router-dom";
 
 class Header extends Component {
-  componentWillUnmount() {
-    console.log(this.props.match.params);
-  }
   render() {
     const { product, cart } = this.props;
     const { pathname } = this.props.location;
@@ -34,11 +31,14 @@ class Header extends Component {
           </div>
           <div className="header__nav--right df ai-c jc-fe">
             <CurrencyCard />
-            <Link to="/cart" className="header__nav--cart">
-              <BsCart2 className="header__nav--cart" />
-              <span>{cart.length}</span>
+            <div className="header__nav--cart">
+              <Link to="/cart">
+                <BsCart2 className="header__nav--cart" />
+                <span>{cart.length}</span>
+              </Link>
+
               <CartPreview />
-            </Link>
+            </div>
           </div>
         </nav>
       </header>

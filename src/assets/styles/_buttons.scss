@@ -29,3 +29,21 @@
     transition: 0.1s;
   }
 }
+
+.view-bag-cta {
+  @extend .add-cta;
+  padding: 0.7em 2.5em;
+  background-color: $white;
+  color: $smoothBlack;
+  border: 1px solid $smoothBlack;
+}
+.check-out-cta {
+  @extend .add-cta;
+  padding: 0.7em 2.5em;
+}
+
+.count-cta {
+  width: 1.3em;
+  height: 1.3em;
+  border: 1px solid $smoothBlack;
+}

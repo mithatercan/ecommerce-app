@@ -50,7 +50,7 @@
       }
       span {
         position: absolute;
-        left: 10px;
+        left: 20px;
         bottom: 14px;
         text-align: center;
         background-color: $smoothBlack;
@@ -63,19 +63,29 @@
         .header__nav--cart--preview {
           opacity: 1;
           visibility: visible;
+          top: 3.2em;
         }
       }
       &--preview {
         position: absolute;
         right: 0em;
-        width: 10em;
+        top: 3em;
+        width: 20em;
+        padding: 1em;
+        background-color: red;
         background-color: $white;
         box-shadow: $smoothShadow;
-        height: 10em;
+        height: auto;
         opacity: 0;
-        transition: 0.1s;
+        transition: 0.2s ease-in;
         visibility: hidden;
         cursor: pointer;
+        &__btns {
+          margin-top: 20px;
+        }
+        @include breakpoint-down(medium) {
+          display: none;
+        }
       }
     }
   }

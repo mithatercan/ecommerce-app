@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import getSymbolFromCurrency from "currency-symbol-map";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
-import store from "../redux/store";
-import { changeCurrency } from "../redux/slicers/currencySlice";
+import { changeCurrencyAction } from "../redux/actions/currencyActions";
 class CurrencyCard extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ class CurrencyCard extends Component {
     };
   }
   handleClick = (target) => {
-    store.dispatch(changeCurrency(target.value));
+    changeCurrencyAction(target.value);
     this.setState({
       ...this.state,
       choosen: target.value,

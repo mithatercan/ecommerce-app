@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import CartProductCard from "../components/CartProductCard";
 class Cart extends Component {
   render() {
     const { cart } = this.props;
-    console.log(cart);
     return (
-      <div>
-        {/* {cart.map((product) => (
-          <p>{product.name}</p>
-        ))} */}
+      <div className="cart">
+        {cart.length > 0 &&
+          cart.map((product, Idx) => (
+            <CartProductCard key={Idx} product={product} />
+          ))}
       </div>
     );
   }

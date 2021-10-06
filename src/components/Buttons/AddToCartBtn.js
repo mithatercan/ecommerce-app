@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import store from "../../redux/store";
-import { addToCart } from "../../redux/slicers/cartSlice";
+import { addCartAction } from "../../redux/actions/cartActions";
 class AddToCartBtn extends Component {
   handleClick = () => {
-    store.dispatch(addToCart(this.props.product));
+    addCartAction(this.props.product);
   };
   render() {
     const { passive } = this.props;

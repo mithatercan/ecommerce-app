@@ -26,7 +26,9 @@ class Header extends Component {
             ))}
           </div>
           <div className="header__nav--mid txt-ac">
-            <BsHandbagFill className="header__nav--logo" />
+            <Link to="/">
+              <BsHandbagFill className="header__nav--logo" />
+            </Link>
           </div>
           <div className="header__nav--right df ai-c jc-fe">
             <CurrencyCard />

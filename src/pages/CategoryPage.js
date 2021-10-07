@@ -3,13 +3,6 @@ import { connect } from "react-redux";
 import ProductCard from "../components/ProductCard";
 
 class CategoryPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      display: false,
-      displayProdct: {},
-    };
-  }
   render() {
     const { categories } = this.props.product;
     const { content } = this.props;
@@ -21,16 +14,11 @@ class CategoryPage extends Component {
             {categories.map((category) => {
               if (category.name === content) {
                 return category.products.map((product, idx) => (
-                  <ProductCard
-                    key={idx}
-                    onProductCard={(product) => {
-                      this.setState({
-                        display: !this.state.display,
-                        displayProdct: product,
-                      });
-                    }}
-                    product={product}
-                  />
+                  <ProductCard key={idx} product={product} />
+                ));
+              } else if (content === "all") {
+                return category.products.map((product, idx) => (
+                  <ProductCard key={idx} product={product} />
                 ));
               }
             })}

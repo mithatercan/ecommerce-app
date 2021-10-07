@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { addCartAction } from "../../redux/actions/cartActions";
 class AddToCartBtn extends Component {
   handleClick = () => {
-    addCartAction(this.props.product);
+    addCartAction(this.props.product, this.props.attributes);
   };
   render() {
     const { passive } = this.props;

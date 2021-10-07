@@ -1,24 +1,26 @@
 import React, { Component } from "react";
-import AttributeBtn from "./Buttons/AttributeBtn";
-
-export class Attributes extends Component {
+import AttributeItems from "./AttributeItems";
+class Attributes extends Component {
+  //This event is from AttributeItems componenet comes from AttributeBtn.
+  handleClick = (attribute) => {
+    this.props.handleAttributeEvent(attribute);
+  };
   render() {
     // This get product prop and map the product attributes.
-    const { product } = this.props;
-    return product.attributes.map((attribute, idx) => (
+    const { attributes } = this.props;
+    return attributes.map((attribute, idx) => (
       <div>
         <h3 className="product-detail__attributes--name">
           {attribute.name.toUpperCase()} :
         </h3>
         <div key={idx} className="product-detail__attributes--btns">
-          {attribute.items.map((item, itemIdx) => (
-            <AttributeBtn
-              key={itemIdx}
-              color={attribute.name === "Color" && item.value}
-              value={item.value}
-              attribute={{ name: attribute.name, value: item.value }}
-            />
-          ))}
+          <AttributeItems
+            handleAttributeEvent={(attribute) => {
+              this.handleClick(attribute);
+            }}
+            attributeName={attribute.name}
+            attributeItems={attribute.items}
+          />
         </div>
       </div>
     ));

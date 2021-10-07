@@ -5,9 +5,6 @@ import getCurrency from "../utils/getCurrency";
 import { connect } from "react-redux";
 import checkInStock from "../utils/checkInStock";
 class productCard extends Component {
-  handleClick = (product) => {
-    this.props.onProductCard(product);
-  };
   render() {
     const { product, currency } = this.props;
     return (

@@ -2,17 +2,18 @@ import React, { Component } from "react";
 
 class AttributeBtn extends Component {
   handleClick = () => {
-    alert("hey");
+    this.props.handleClick();
   };
   render() {
-    const { color, value } = this.props;
+    const { color, value, disabled, size } = this.props;
     return (
       <button
         onClick={() => {
           this.handleClick();
         }}
+        disabled={disabled}
         style={{ background: color, border: `1px solid ${color}` }}
-        className={`attribute-cta ${color && "color"}`}
+        className={`attribute-cta__${color && "color"} attribute-cta__${size}`}
       >
         {!color && value}
       </button>

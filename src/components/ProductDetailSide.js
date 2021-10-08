@@ -31,6 +31,7 @@ class ProductDetailSide extends Component {
           <Attributes
             handleAttributeEvent={(attribute) => this.handleEvent(attribute)}
             attributes={product.attributes}
+            choosenAttributes={data}
           />
         </div>
         <div className="product-detail__inner--price">
@@ -38,6 +39,11 @@ class ProductDetailSide extends Component {
           <span>{getCurrency(product, currency)}</span>
         </div>
         <AddToCartBtn
+          handleAddCartEvent={() => {
+            this.setState({
+              data: [],
+            });
+          }}
           attributes={data}
           product={product}
           passive={!product.inStock}

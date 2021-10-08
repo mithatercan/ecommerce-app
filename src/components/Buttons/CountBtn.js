@@ -5,9 +5,12 @@ class CountBtn extends Component {
     changeQuantityAction({ product: this.props.product, type: type });
   };
   render() {
-    const { type } = this.props;
+    const { type, size } = this.props;
     return (
-      <button onClick={() => this.handleClick(type)} className="count-cta">
+      <button
+        onClick={() => this.handleClick(type)}
+        className={`count-cta count-cta--${size}`}
+      >
         {type === "decrease" ? "-" : "+"}
       </button>
     );

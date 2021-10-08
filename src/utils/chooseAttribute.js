@@ -1,13 +1,12 @@
-const chooseAttribute = (state, item) => {
-  return state.map((stateItem) => {
-    if (stateItem.name === item.name && stateItem.value === item.value) {
-      if (item.name === "Color") {
-        return "attribute-cta__choosen--color";
-      } else {
-        return "attribute-cta__choosen";
+const chooseAttribute = (obj, attributes) => {
+  return (
+    attributes &&
+    attributes.some((attribute) => {
+      if (obj.name === attribute.name && obj.value === attribute.value) {
+        return "choosen";
       }
-    }
-  });
+    })
+  );
 };
 
 export default chooseAttribute;

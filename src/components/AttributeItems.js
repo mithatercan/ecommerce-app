@@ -5,21 +5,27 @@ class AttributeItems extends Component {
     this.props.handleAttributeEvent(attribute);
   };
   render() {
-    const { attributeItems, attributeName } = this.props;
+    const { items, type, name, size, btnsDisabled, choosenAttributes } =
+      this.props;
     return (
-      <div className="df ai-c ">
-        {attributeItems.map((item, itemIdx) => (
+      <div className="attribute__items df ai-c ">
+        {items.map((item, itemIdx) => (
           <AttributeBtn
             handleClick={() =>
               this.handleClick({
-                name: attributeName,
+                name: name,
+                type: type,
                 value: item.value,
               })
             }
             key={itemIdx}
-            color={(item.name || attributeName) === "Color" ? item.value : null}
+            size={size}
+            name={name}
+            type={item.type || type}
             value={item.value}
-            attributes={{ name: attributeName, value: item.value }}
+            attributes={{ type: item.type || type, value: item.value }}
+            disabled={btnsDisabled}
+            choosenAttributes={choosenAttributes}
           />
         ))}
       </div>

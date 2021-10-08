@@ -8,6 +8,7 @@
   &__passive {
     opacity: 0.7;
     background-color: $disabled;
+    cursor: not-allowed;
   }
   &:hover {
     opacity: 0.7;
@@ -15,24 +16,45 @@
 }
 
 .attribute-cta {
-  &.color {
+  &__swatch {
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    border: 1px solid $smoothBlack;
+    margin-right: 0.4em;
+    cursor: pointer;
+    transition: 0.2s;
+    &--choosen {
+      transform: translateY(-5px);
+    }
+    &--md {
+      width: 23px;
+      height: 23px;
+    }
   }
-
-  width: 4.1em;
-  height: 2em;
-  background-color: $white;
-  color: $smoothBlack;
-  border: 1px solid $smoothBlack;
-  margin-right: 0.4em;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $smoothBlack;
-    color: $white;
-    transition: 0.1s;
+  &__text {
+    width: 4.1em;
+    height: 2em;
+    background-color: $white;
+    color: $smoothBlack;
+    margin-right: 0.4em;
+    border: 1px solid $smoothBlack;
+    cursor: pointer;
+    &--choosen {
+      background-color: $smoothBlack;
+      color: $white;
+      transform: translateY(-5px);
+    }
+    &--md {
+      min-width: 2em;
+      height: 1.9em;
+      font-size: 0.65em;
+    }
+    &:hover {
+      background-color: $smoothBlack;
+      color: $white;
+      transition: 0.1s;
+    }
   }
 }
 
@@ -60,5 +82,9 @@
   &:hover {
     background-color: $smoothBlack;
     color: $white;
+  }
+  &--lg {
+    width: 2em;
+    height: 2em;
   }
 }

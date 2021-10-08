@@ -33,7 +33,7 @@ class Header extends Component {
           <div className="header__nav--right df ai-c jc-fe">
             <CurrencyCard />
             <div className="header__nav--cart">
-              <Link to="/cart">
+              <Link to={cart.length === 0 ? "#" : "/cart"}>
                 <BsCart2 className="header__nav--cart" />
                 <span>{cart.length}</span>
               </Link>

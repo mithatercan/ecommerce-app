@@ -12,9 +12,13 @@
     width: 7em;
     padding: 0 20px;
     overflow: hidden;
-
     scrollbar-width: auto;
     scrollbar-color: #d1d1d1 #ffffff;
+    @include breakpoint-down(medium) {
+      overflow-x: scroll;
+      height: 150px;
+      width: 11em;
+    }
     &:hover {
       overflow-y: auto;
     }
@@ -47,8 +51,8 @@
     margin: 10px;
   }
   &__main {
-    width: 400px;
-    height: 400px;
+    width: 20em;
+    height: 20em;
   }
 }
 
@@ -63,10 +67,12 @@
     width: 100%;
     height: 23em;
     overflow-y: auto;
-
     scrollbar-width: auto;
     scrollbar-color: #d3d3d3 #ffffff;
-
+    @include breakpoint-down(medium) {
+      overflow: initial;
+      text-align: center;
+    }
     h2 {
       font-size: $font-xl;
       font-weight: 400;
@@ -99,8 +105,7 @@
       font-size: $font-md;
       margin-top: 1em;
     }
-    &--name {
-    }
+
     &--btns {
       margin: 1em 0;
     }

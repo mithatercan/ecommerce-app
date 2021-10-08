@@ -16,7 +16,7 @@ class ProductDetailPage extends Component {
         product: result,
       })
     );
-  }
+  }  // FETCHING PRODUCT DATA FOR THE REAL TIME
 
   render() {
     const { product } = this.state;

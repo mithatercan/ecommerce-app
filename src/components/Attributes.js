@@ -7,20 +7,25 @@ class Attributes extends Component {
   };
   render() {
     // This get product prop and map the product attributes.
-    const { attributes } = this.props;
+    const { attributes, choosenAttributes } = this.props;
     return attributes.map((attribute, idx) => (
-      <div>
+      <div key={idx}>
         <h3 className="product-detail__attributes--name">
           {attribute.name.toUpperCase()} :
         </h3>
         <div key={idx} className="product-detail__attributes--btns">
-          <AttributeItems
-            handleAttributeEvent={(attribute) => {
-              this.handleClick(attribute);
-            }}
-            attributeName={attribute.name}
-            attributeItems={attribute.items}
-          />
+          <div className="df ai-c ">
+            <AttributeItems
+              handleAttributeEvent={(attribute) => {
+                this.handleClick(attribute);
+              }}
+              choosenAttributes={choosenAttributes}
+              items={attribute.items}
+              name={attribute.name}
+              type={attribute.type}
+              size="lg"
+            />
+          </div>
         </div>
       </div>
     ));

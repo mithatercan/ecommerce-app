@@ -1,0 +1,38 @@
+.currency-card {
+    position: relative;
+    font-size: $font-xs;
+    margin-right: 1em;
+    cursor: pointer;
+    &:hover {
+      .currency-card__data--list {
+        visibility: visible;
+        opacity: 1;
+        top: 3.3em;
+      }
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  
+    &__data {
+      &--list {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s;
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        box-shadow: $smoothShadow;
+        list-style: none;
+        width: 4em;
+        top: 1.6em;
+        right: 0;
+        padding: 0 1.2em;
+        text-align: center;
+      }
+      display: block;
+      margin: 1.3em 0;
+      &:hover {
+        color: $green;
+      }
+    }
+  }

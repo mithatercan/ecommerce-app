@@ -10,17 +10,22 @@ class CartProductCard extends Component {
       <div
         className={`cart-product-card cart-product-card--${size} df ai-c jc-sb`}
       >
-        <div className="cart-product-card__left df jc-sb fd-c">
+        <div className="cart-product-card__left df jc-sb  fd-c">
           <p>{product.brand}</p>
           <p>{product.name}</p>
-          <small>{getCurrency(product, currency)}</small>
-          <AttributeItems attributeItems={product.choosenAttribute} />
+          <p>{getCurrency(product, currency)}</p>
+
+          <AttributeItems
+            btnsDisabled={true}
+            size="md"
+            items={product.choosenAttribute}
+          />
         </div>
         <div className="cart_product-card__right df jc-sb">
-          <div className="cart-product-card__right--btns df fd-c jc-se ai-c ">
-            <CountBtn product={product} type="increase" />
+          <div className="cart-product-card__right--btns df fd-c jc-sa ai-c ">
+            <CountBtn size={size} product={product} type="increase" />
             {product.quantity}
-            <CountBtn product={product} type="decrease" />
+            <CountBtn size={size} product={product} type="decrease" />
           </div>
           <img src={product.gallery[0]} alt="product" />
         </div>

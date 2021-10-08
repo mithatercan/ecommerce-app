@@ -71,6 +71,11 @@ button {
           justify-content: space-evenly;
 }
 
+.jc-sa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .jc-fe {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -160,15 +165,15 @@ button {
   margin: 0 auto;
 }
 
-@media (max-width: 39.9375em) {
-  .header__nav {
-    display: none;
-  }
-}
-
 .header__nav a {
   margin: 0 10px;
   height: 100%;
+}
+
+@media (max-width: 63.9375em) {
+  .header__nav a {
+    font-size: 0.8em;
+  }
 }
 
 .header__nav--active {
@@ -185,6 +190,12 @@ button {
   width: 100%;
 }
 
+@media (max-width: 63.9375em) {
+  .header__nav--active::before {
+    display: none;
+  }
+}
+
 .header__nav--left {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -196,6 +207,12 @@ button {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media (max-width: 63.9375em) {
+  .header__nav--mid {
+    display: none;
+  }
 }
 
 .header__nav--mid svg {
@@ -309,11 +326,7 @@ button {
 
 .cart-product-card {
   width: 90%;
-  margin: auto;
-}
-
-.cart-product-card__right--btns {
-  margin-right: 1em;
+  margin: 20px auto;
 }
 
 .cart-product-card--sm img {
@@ -323,20 +336,52 @@ button {
      object-fit: contain;
 }
 
-.cart-product-card--sm p {
-  margin: 0.2em 0;
+.cart-product-card--sm p:nth-child(n + 1) {
+  margin: 0.3em 0;
 }
 
 .cart-product-card--lg {
   border-bottom: 1px solid #f3f3f3;
   border-top: 1px solid #f3f3f3;
+  width: 70%;
+  margin-left: 5%;
+}
+
+@media (max-width: 39.9375em) {
+  .cart-product-card--lg {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.cart-product-card--lg p {
+  font-size: 1.4em;
+  font-weight: 300;
+}
+
+.cart-product-card--lg p:nth-child(2) {
+  font-weight: 100;
+}
+
+.cart-product-card--lg p:nth-child(n + 1) {
+  margin: 0.4em 0;
 }
 
 .cart-product-card--lg img {
-  width: 16em;
-  height: 16em;
+  width: 14em;
+  height: 14em;
   -o-object-fit: contain;
      object-fit: contain;
+  margin-left: 1em;
 }
 
 .cart {
@@ -458,6 +503,14 @@ button {
   scrollbar-color: #d1d1d1 #ffffff;
 }
 
+@media (max-width: 63.9375em) {
+  .gallery__previews {
+    overflow-x: scroll;
+    height: 150px;
+    width: 11em;
+  }
+}
+
 .gallery__previews:hover {
   overflow-y: auto;
 }
@@ -497,8 +550,8 @@ button {
 }
 
 .gallery__main {
-  width: 400px;
-  height: 400px;
+  width: 20em;
+  height: 20em;
 }
 
 .product-detail {
@@ -521,6 +574,13 @@ button {
   overflow-y: auto;
   scrollbar-width: auto;
   scrollbar-color: #d3d3d3 #ffffff;
+}
+
+@media (max-width: 63.9375em) {
+  .product-detail__inner {
+    overflow: initial;
+    text-align: center;
+  }
 }
 
 .product-detail__inner h2 {
@@ -597,6 +657,10 @@ button {
   }
 }
 
+.layout {
+  overflow-x: hidden;
+}
+
 .layout__footer {
   position: fixed;
   bottom: 0;
@@ -617,29 +681,58 @@ button {
 .add-cta__passive {
   opacity: 0.7;
   background-color: #275834;
+  cursor: not-allowed;
 }
 
 .add-cta:hover, .view-bag-cta:hover, .check-out-cta:hover {
   opacity: 0.7;
 }
 
-.attribute-cta {
+.attribute-cta__swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #1d1f22;
+  margin-right: 0.4em;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.attribute-cta__swatch--choosen {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.attribute-cta__swatch--md {
+  width: 23px;
+  height: 23px;
+}
+
+.attribute-cta__text {
   width: 4.1em;
   height: 2em;
   background-color: #fff;
   color: #1d1f22;
-  border: 1px solid #1d1f22;
   margin-right: 0.4em;
+  border: 1px solid #1d1f22;
   cursor: pointer;
 }
 
-.attribute-cta.color {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+.attribute-cta__text--choosen {
+  background-color: #1d1f22;
+  color: #fff;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
-.attribute-cta:hover {
+.attribute-cta__text--md {
+  min-width: 2em;
+  height: 1.9em;
+  font-size: 0.65em;
+}
+
+.attribute-cta__text:hover {
   background-color: #1d1f22;
   color: #fff;
   -webkit-transition: 0.1s;
@@ -672,6 +765,11 @@ button {
 .count-cta:hover {
   background-color: #1d1f22;
   color: #fff;
+}
+
+.count-cta--lg {
+  width: 2em;
+  height: 2em;
 }
 
 .home {

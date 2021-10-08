@@ -29,12 +29,14 @@ export const changeQuantityAction = (payload) => {
 
 export const addCartAction = (product, attributes) => {
   console.log(attributes);
-  store.dispatch(
-    addToCart({
-      ...product,
-      quantity: 1,
-      choosenAttribute: attributes,
-      // This choosenAttribute that we choose from product detail page.
-    })
-  );
+  return setTimeout(() => {
+    store.dispatch(
+      addToCart({
+        ...product,
+        quantity: 1,
+        choosenAttribute: attributes,
+        // This choosenAttribute that we choose from product detail page.
+      })
+    );
+  }, 500);
 };

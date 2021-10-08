@@ -1,0 +1,7 @@
+.attribute__items {
+  @include breakpoint-down(medium) {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

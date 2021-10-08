@@ -7,16 +7,21 @@
   width: 100%;
   padding: 1.2em 0em;
 
+
+
+  // HEADER NAV 
   &__nav {
     width: 90%;
     margin: 0 auto;
-    @include breakpoint-down(small) {
-      display: none;
-    }
+
     a {
       margin: 0 10px;
       height: 100%;
+      @include breakpoint-down(medium) {
+        font-size: $font-xs;
+      }
     }
+    // HEADER ACTIVE LINKS
     &--active {
       color: $green;
       position: relative;
@@ -27,14 +32,21 @@
         background-color: $green;
         height: 2px;
         width: 100%;
+        @include breakpoint-down(medium) {
+          display: none;
+        }
       }
     }
+    // HEADER NAV SIDES
     &--left {
       flex: 1;
       height: 100%;
     }
     &--mid {
       flex: 1;
+      @include breakpoint-down(medium) {
+        display: none;
+      }
       svg {
         font-size: $font-lg;
         color: $green;
@@ -43,6 +55,8 @@
     &--right {
       flex: 1;
     }
+
+    //HEADER CART ICON
     &--cart {
       position: relative;
       svg {
@@ -66,6 +80,7 @@
           top: 3.2em;
         }
       }
+      // HEADER CART ICON PREVIEW OVERLAY
       &--preview {
         position: absolute;
         right: 0em;

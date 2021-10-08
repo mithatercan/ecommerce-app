@@ -1,21 +1,27 @@
 import React, { Component } from "react";
-
+import chooseAttribute from "../../utils/chooseAttribute";
 class AttributeBtn extends Component {
   handleClick = () => {
     this.props.handleClick();
   };
   render() {
-    const { color, value, disabled, size } = this.props;
+    const { name, type, value, disabled, size, choosenAttributes } = this.props;
+    const obj = { name: name, value: value };
+    const choosen = chooseAttribute(obj, choosenAttributes);
     return (
       <button
+        className={`attribute-cta__${type} attribute-cta__${type}--${size} ${
+          choosen && `attribute-cta__${type}--choosen`
+        }`}
+        style={{
+          background: type === "swatch" && value,
+        }}
+        disabled={disabled}
         onClick={() => {
           this.handleClick();
         }}
-        disabled={disabled}
-        style={{ background: color, border: `1px solid ${color}` }}
-        className={`attribute-cta__${color && "color"} attribute-cta__${size}`}
       >
-        {!color && value}
+        {type !== "swatch" && value}{" "}
       </button>
     );
   }

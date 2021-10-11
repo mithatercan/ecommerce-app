@@ -39,7 +39,7 @@ npm run build
 # Details
 
 1) You can simply add products to your cart.
-2) Change quantity of the cart.
+2) Change quantity of the product.
 3) Choose attributes of your product and add to your cart.
 4) Change the currency of the store.
 5) Preview the cart with the overlay with hover over the cart icon.

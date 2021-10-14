@@ -83,16 +83,19 @@
         position: absolute;
         right: 0em;
         top: 3em;
-        width: 20em;
+        width: 22em;
+        min-height: auto;
+        max-height: 38vw;
         padding: 1em;
         background-color: red;
         background-color: $white;
         box-shadow: $smoothShadow;
-        height: auto;
+        overflow-y: auto;
         opacity: 0;
         transition: 0.2s ease-in;
         visibility: hidden;
         cursor: pointer;
+
         &__btns {
           margin-top: 20px;
         }

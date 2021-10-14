@@ -312,13 +312,15 @@ button {
   position: absolute;
   right: 0em;
   top: 3em;
-  width: 20em;
+  width: 22em;
+  min-height: auto;
+  max-height: 38vw;
   padding: 1em;
   background-color: red;
   background-color: #fff;
   -webkit-box-shadow: 0 3px 30px 0 #f3f3f3;
           box-shadow: 0 3px 30px 0 #f3f3f3;
-  height: auto;
+  overflow-y: auto;
   opacity: 0;
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;

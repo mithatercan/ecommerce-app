@@ -14,8 +14,10 @@ class Header extends PureComponent {
         <nav className="header__nav df ai-c jc-sb">
           <div className="header__nav--left ">
             <Link
-              className={location.pathname === `/all` && "header__nav--active"}
-              to="/all"
+              className={
+                location.pathname === `/categories/all` && "header__nav--active"
+              }
+              to="/categories/all"
             >
               ALL
             </Link>
@@ -32,7 +34,7 @@ class Header extends PureComponent {
             ))}
           </div>
           <div className="header__nav--mid txt-ac">
-            <Link to="/all">
+            <Link to="/categories/all">
               <BsHandbagFill className="header__nav--logo" />
             </Link>
           </div>

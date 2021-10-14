@@ -32,10 +32,14 @@ class App extends PureComponent {
             path="/product/detail/category=:category/id=:id"
             component={ProductDetailPage}
           />
-          <Route exact path="/all">
+          <Route exact path="/categories/all">
             <CategoryPage content="all" />
           </Route>
-          <Route exact path="/" render={(props) => <Redirect to="/all" />} />
+          <Route
+            exact
+            path="/"
+            render={(props) => <Redirect to="/categories/all" />}
+          />
         </Layout>
       </Router>
     );

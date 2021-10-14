@@ -27,7 +27,7 @@ class App extends Component {
             path="/product/detail/category=:category/id=:id"
             component={ProductDetailPage}
           />
-          <Route exact path="/">
+          <Route exact path="/all">
             <CategoryPage content="all" />
           </Route>
         </Layout>

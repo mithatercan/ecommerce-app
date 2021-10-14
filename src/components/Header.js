@@ -13,6 +13,12 @@ class Header extends Component {
       <header className="header ">
         <nav className="header__nav df ai-c jc-sb">
           <div className="header__nav--left ">
+            <Link
+              className={location.pathname === `/all` && "header__nav--active"}
+              to="/all"
+            >
+              ALL
+            </Link>
             {product.categories.map((item) => (
               <Link
                 className={
@@ -26,7 +32,7 @@ class Header extends Component {
             ))}
           </div>
           <div className="header__nav--mid txt-ac">
-            <Link to="/">
+            <Link to="/all">
               <BsHandbagFill className="header__nav--logo" />
             </Link>
           </div>

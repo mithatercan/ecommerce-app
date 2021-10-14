@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import getSymbolFromCurrency from "currency-symbol-map";
-class CurrencyCardList extends Component {
+class CurrencyCardList extends PureComponent {
   handleClick = (target) => {
     this.props.handleClick(target);
   };

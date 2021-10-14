@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +11,7 @@ import Spinner from "./components/Spinner";
 import CategoryPage from "./pages/CategoryPage";
 import CartPage from "./pages/CartPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
-class App extends Component {
+class App extends PureComponent {
   render() {
     const { product } = this.props;
     return product.length === 0 ? (

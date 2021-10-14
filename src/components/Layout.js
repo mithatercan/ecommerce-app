@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Header from "./Header";
-class Layout extends Component {
+class Layout extends PureComponent {
   render() {
     return (
       <div className="layout">

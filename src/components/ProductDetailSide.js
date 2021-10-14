@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import AddToCartBtn from "./Buttons/AddToCartBtn";
 import getCurrency from "../utils/getCurrency";
 import { connect } from "react-redux";
 import Attributes from "./Attributes";
 import createAttribute from "../utils/createAttribute";
 import ReactHtmlParser from "react-html-parser";
-class ProductDetailSide extends Component {
+class ProductDetailSide extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import CartProductCard from "./CartProductCard";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { ViewBagBtn, CheckOutBtn } from "./Buttons/CartPreviewBtns";
 import EmptyState from "../assets/images/empty-state.svg";
-class CartPreview extends Component {
+class CartPreview extends PureComponent {
   render() {
     const { cart } = this.props;
     return (

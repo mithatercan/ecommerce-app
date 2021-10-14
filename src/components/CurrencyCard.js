@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { changeCurrencyAction } from "../redux/actions/currencyActions";
 import CurrencyCardList from "./CurrencyCardList";
-class CurrencyCard extends Component {
+class CurrencyCard extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

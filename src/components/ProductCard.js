@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import getCurrency from "../utils/getCurrency";
 import { connect } from "react-redux";
 import checkInStock from "../utils/checkInStock";
-class productCard extends Component {
+class productCard extends PureComponent {
   render() {
     const { product, currency } = this.props;
     return (

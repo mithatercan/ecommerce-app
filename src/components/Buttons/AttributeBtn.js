@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import chooseAttribute from "../../utils/chooseAttribute";
-class AttributeBtn extends Component {
+class AttributeBtn extends PureComponent {
   handleClick = () => {
     this.props.handleClick();
   };

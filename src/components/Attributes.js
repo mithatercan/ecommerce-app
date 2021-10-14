@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import AttributeItems from "./AttributeItems";
-class Attributes extends Component {
+class Attributes extends PureComponent {
   //This event is from AttributeItems componenet comes from AttributeBtn.
   handleClick = (attribute) => {
     this.props.handleAttributeEvent(attribute);

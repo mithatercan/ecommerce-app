@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { addCartAction } from "../../redux/actions/cartActions";
-import Spinner from "../Spinner";
-class AddToCartBtn extends Component {
+
+class AddToCartBtn extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

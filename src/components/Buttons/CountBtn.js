@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { changeQuantityAction } from "../../redux/actions/cartActions";
-class CountBtn extends Component {
+class CountBtn extends PureComponent {
   handleClick = (type) => {
     changeQuantityAction({ product: this.props.product, type: type });
   };

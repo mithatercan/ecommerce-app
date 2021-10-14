@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import CountBtn from "./Buttons/CountBtn";
 import getCurrency from "../utils/getCurrency";
 import AttributeItems from "./AttributeItems";
-class CartProductCard extends Component {
+class CartProductCard extends PureComponent {
   render() {
     const { product, currency, size } = this.props;
     return (

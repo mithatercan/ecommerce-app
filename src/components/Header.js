@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import CurrencyCard from "./CurrencyCard";
@@ -6,7 +6,7 @@ import { BsCart2, BsHandbagFill } from "react-icons/bs";
 import CartPreview from "./CartPreview";
 import { withRouter } from "react-router-dom";
 
-class Header extends Component {
+class Header extends PureComponent {
   render() {
     const { product, cart, location } = this.props;
     return (

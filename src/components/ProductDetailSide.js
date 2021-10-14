@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Attributes from "./Attributes";
 import createAttribute from "../utils/createAttribute";
 import ReactHtmlParser from "react-html-parser";
+import ErrorAlert from "./ErrorAlert";
 class ProductDetailSide extends PureComponent {
   constructor(props) {
     super(props);
@@ -23,11 +24,12 @@ class ProductDetailSide extends PureComponent {
   };
 
   render() {
-    const { product, currency } = this.props;
+    const { product, currency, cart } = this.props;
     const { data } = this.state;
 
     return (
       <aside className="product-detail__inner">
+        <ErrorAlert error={cart.error} />
         <h2>{product.brand}</h2>
         <p>{product.name}</p>
         <div className="product-detail__attributes">
@@ -58,5 +60,6 @@ class ProductDetailSide extends PureComponent {
 }
 const mapStateToProps = (state) => ({
   currency: state.currency.data,
+  cart: state.cart,
 });
 export default connect(mapStateToProps)(ProductDetailSide);

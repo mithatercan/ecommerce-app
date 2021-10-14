@@ -1,0 +1,17 @@
+.error {
+  position: absolute;
+  width: auto;
+  padding: 10px;
+  background-color: $danger;
+  opacity: 0;
+  color: white;
+  top: 0em;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0s;
+  &__active {
+    transition: 0.2s;
+    top: 5em;
+    opacity: 1;
+  }
+}

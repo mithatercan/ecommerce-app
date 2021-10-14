@@ -7,8 +7,10 @@ class CartPage extends Component {
     const { cart } = this.props;
     return (
       <div className="cart">
-        {cart.length > 0 ? (
-          cart.map((product, Idx) => (
+        <br />
+        <br />
+        {cart.data.length > 0 ? (
+          cart.data.map((product, Idx) => (
             <CartProductCard size="lg" key={Idx} product={product} />
           ))
         ) : (
@@ -34,7 +36,7 @@ class CartPage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  cart: state.cart.data,
+  cart: state.cart,
 });
 
 export default connect(mapStateToProps)(CartPage);

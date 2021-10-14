@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import store from "../store";
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
     data: [],
+    error: "",
   },
 
   reducers: {
@@ -12,27 +14,21 @@ export const cartSlice = createSlice({
       if (state.data.length === 0) {
         state.data = [data];
       } else if (
-        !state.data.some(
+        state.data.some(
           (item) =>
-            // Check if the product doesn't exist in store with same id and choosenAttributes
+            // Check if the product exist in store with same id and choosenAttributes
+            // If yes then show an error
             item.id === data.id &&
             JSON.stringify(item.choosenAttribute) ===
               JSON.stringify(data.choosenAttribute)
         )
       ) {
-        //If it doesn't exist then add the new product.
-        state.data = [...state.data, data];
-      } else {
-        state = {
-          data: [...state.data],
-          error: "You have this item in your cart!",
-        };
-
+        state.error = "You have this item in your cart.";
         setTimeout(() => {
-          state = {
-            data: [...state, data],
-          };
+          store.dispatch(clearError());
         }, 5000);
+      } else {
+        state.data = [...state.data, data];
       }
     },
     removeFromCart: (state, action) => {
@@ -55,9 +51,13 @@ export const cartSlice = createSlice({
         }
       });
     },
+    clearError: (state) => {
+      state.error = "";
+    },
   },
 });
 
-export const { addToCart, removeFromCart, changeQuantity } = cartSlice.actions;
+export const { addToCart, removeFromCart, changeQuantity, clearError } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

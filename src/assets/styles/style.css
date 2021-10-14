@@ -817,4 +817,26 @@ button {
         grid-template-columns: 1fr;
   }
 }
+
+.error {
+  position: absolute;
+  width: auto;
+  padding: 10px;
+  background-color: #bb2124;
+  opacity: 0;
+  color: white;
+  top: 0em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+.error__active {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  top: 5em;
+  opacity: 1;
+}
 /*# sourceMappingURL=style.css.map */

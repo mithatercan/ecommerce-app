@@ -5,34 +5,44 @@ export const cartSlice = createSlice({
   initialState: {
     data: [],
   },
+
   reducers: {
     addToCart: (state, action) => {
-      if (!state.data.some((item) => item.id === action.payload.id)) {
-        state.data = [...state.data, action.payload];
+      const data = action.payload;
+      if (state.data.length === 0) {
+        state.data = [data];
+      } else if (
+        !state.data.some(
+          (item) =>
+            // Check if the product doesn't exist in store with same id and choosenAttributes
+            item.id === data.id &&
+            JSON.stringify(item.choosenAttribute) ===
+              JSON.stringify(data.choosenAttribute)
+        )
+      ) {
+        //If it doesn't exist then add the new product.
+        state.data = [...state.data, data];
       } else {
-        //Check if the cart has the same product , then change the product.
-        state.data = state.data.map((item) => {
-          if (item.id === action.payload.id) {
-            return {
-              ...action.payload,
-              quantity: item.quantity, // Keeps the quantity of the product.
-            };
-          } else {
-            return {
-              ...item,
-            };
-          }
-        });
+        state = {
+          data: [...state.data],
+          error: "You have this item in your cart!",
+        };
+
+        setTimeout(() => {
+          state = {
+            data: [...state, data],
+          };
+        }, 5000);
       }
     },
     removeFromCart: (state, action) => {
       state.data = state.data.filter(
-        (product) => product.id !== action.payload
+        (product) => product.cartId !== action.payload
       );
     },
     changeQuantity: (state, action) => {
       state.data = state.data.map((product) => {
-        if (product.id === action.payload.id) {
+        if (product.cartId === action.payload.cartId) {
           return {
             ...product,
             quantity: action.payload.quantity,

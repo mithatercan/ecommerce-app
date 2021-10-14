@@ -1,6 +1,7 @@
 import store from "../store";
 import { addToCart, removeFromCart } from "../slicers/cartSlice";
 import { changeQuantity } from "../slicers/cartSlice";
+import { v4 as uuid } from "uuid";
 
 const checkQuantityToRemove = (payload) => {
   const { product, type } = payload;
@@ -14,12 +15,12 @@ export const changeQuantityAction = (payload) => {
   const { product, type } = payload;
   if (checkQuantityToRemove(payload)) {
     // Product's quantity is below 1 then call removeFromCart action.
-    store.dispatch(removeFromCart(product.id));
+    store.dispatch(removeFromCart(product.cartId));
   } else {
     store.dispatch(
       // if it is not then change the quantity with type (decrease || increase)
       changeQuantity({
-        id: product.id,
+        cartId: product.cartId,
         quantity:
           type === "increase" ? product.quantity + 1 : product.quantity - 1,
       })
@@ -28,12 +29,12 @@ export const changeQuantityAction = (payload) => {
 };
 
 export const addCartAction = (product, attributes) => {
-  console.log(attributes);
   return setTimeout(() => {
     store.dispatch(
       addToCart({
         ...product,
         quantity: 1,
+        cartId: uuid(),
         choosenAttribute: attributes,
         // This choosenAttribute that we choose from product detail page.
       })

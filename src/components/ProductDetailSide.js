@@ -4,6 +4,7 @@ import getCurrency from "../utils/getCurrency";
 import { connect } from "react-redux";
 import Attributes from "./Attributes";
 import createAttribute from "../utils/createAttribute";
+import ReactHtmlParser from "react-html-parser";
 class ProductDetailSide extends Component {
   constructor(props) {
     super(props);
@@ -20,9 +21,11 @@ class ProductDetailSide extends Component {
       data: newData,
     });
   };
+
   render() {
     const { product, currency } = this.props;
     const { data } = this.state;
+
     return (
       <aside className="product-detail__inner">
         <h2>{product.brand}</h2>
@@ -48,7 +51,7 @@ class ProductDetailSide extends Component {
           product={product}
           passive={!product.inStock}
         />
-        <dl dangerouslySetInnerHTML={{ __html: product.description }} />
+        <dl> {ReactHtmlParser(product.description)}</dl>
       </aside>
     );
   }

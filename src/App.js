@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { connect } from "react-redux";
 import Layout from "./components/Layout";
 import Spinner from "./components/Spinner";
@@ -30,6 +35,7 @@ class App extends Component {
           <Route exact path="/all">
             <CategoryPage content="all" />
           </Route>
+          <Route exact path="/" render={(props) => <Redirect to="/all" />} />
         </Layout>
       </Router>
     );

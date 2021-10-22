@@ -1,5 +1,5 @@
 *This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
-# Scandiweb ReactJS PWA with Graphql Endpoint [ScandiWeb Graphql Endpoint](https://github.com/scandiweb/junior-react-endpoint).*
+# Scandiweb ReactJS PWA with Graphql Endpoint [ScandiWeb Graphql Endpoint](https://github.com/mithatercann/junior-react-endpoint).*
 
 
 ## Setup

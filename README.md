@@ -4,7 +4,7 @@
 
 ## Setup
 
-First go clone this repository to run the server for endpoint [ScandiWeb Graphql Endpoint](https://github.com/scandiweb/junior-react-endpoint).*
+First go clone this repository to run the server for endpoint [ScandiWeb Graphql Endpoint](https://github.com/mithatercann/junior-react-endpoint).*
 
 Go to the project folder and install required dependencies:
 

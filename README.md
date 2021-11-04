@@ -4,7 +4,7 @@
 
 ## Setup
 
-First go clone this repository to run the server for endpoint [ScandiWeb Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
+First go clone this repository to run the server for endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 
 Then clone this repo and go to the project folder and install required dependencies:

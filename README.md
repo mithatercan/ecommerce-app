@@ -1,5 +1,5 @@
 *This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
-# Graphql Endpoints [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
+# Graphql Endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 
 ## Setup

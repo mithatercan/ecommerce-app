@@ -1,12 +1,13 @@
 *This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
-# Scandiweb ReactJS PWA with Graphql Endpoint [ScandiWeb Graphql Endpoint](https://github.com/mithatercann/junior-react-endpoint).*
+# Graphql Endpoints [ScandiWeb Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 
 ## Setup
 
-First go clone this repository to run the server for endpoint [ScandiWeb Graphql Endpoint](https://github.com/mithatercann/junior-react-endpoint).*
+First go clone this repository to run the server for endpoint [ScandiWeb Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
-Go to the project folder and install required dependencies:
+
+Then clone this repo and go to the project folder and install required dependencies:
 
 ```
 npm install

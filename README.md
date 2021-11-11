@@ -2,6 +2,17 @@
 # Graphql Endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 
+# Images 
+
+<p float="left">
+  <img src="/Docs/pic1.png" width="300" />
+  <img src="/Docs/pic2.png" width="300" /> 
+  <img src="/Docs/pic3.png" width="300" />
+  <img src="/Docs/pic4.png" width="300" />
+</p>
+
+
+
 ## Setup
 
 First go clone this repository to run the server for endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
@@ -26,16 +37,6 @@ For production build:
 ```
 npm run build
 ```
-
-
-# Images 
-
-<p float="left">
-  <img src="/Docs/pic1.png" width="300" />
-  <img src="/Docs/pic2.png" width="300" /> 
-  <img src="/Docs/pic3.png" width="300" />
-  <img src="/Docs/pic4.png" width="300" />
-</p>
 
 # Details
 

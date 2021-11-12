@@ -8,7 +8,6 @@
 <p float="left">
   <img src="/Docs/pic1.png" width="300" />
   <img src="/Docs/pic2.png" width="300" /> 
-  <img src="/Docs/pic3.png" width="300" />
   <img src="/Docs/pic4.png" width="300" />
 </p>
 

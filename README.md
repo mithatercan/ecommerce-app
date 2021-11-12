@@ -1,7 +1,7 @@
 # Graphql Endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 
-# Images 
+# Preview Project 📹 
 ![](/Docs/overview.gif)
 
 <p float="left">
@@ -10,6 +10,10 @@
   <img src="/Docs/pic4.png" width="300" />
 </p>
 
+
+# Overview
+
+This project is example of e-commerce web app that allows you to have some basic funtionallities. If you want to add more , please fork this repository and contriubute with your own logic.
 
 
 ## Setup 🔧

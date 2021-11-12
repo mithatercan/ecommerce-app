@@ -1,4 +1,3 @@
-*This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).*
 # Graphql Endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 
@@ -13,7 +12,7 @@
 
 
 
-## Setup
+## Setup 🔧
 
 First go clone this repository to run the server for endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
@@ -24,7 +23,7 @@ Then clone this repo and go to the project folder and install required dependenc
 npm install
 ```
 
-And run Webpack to watch for code changes and bundle js and scss files:
+And run Webpack to watch scss files changes:
 
 ```
 npm start
@@ -38,14 +37,20 @@ For production build:
 npm run build
 ```
 
-# Details
+# Details 
 
 1) You can simply add products to your cart.
+  - Click product card and it takes you product details page , you can choose your attributes and add to cart.
 2) Change quantity of the product.
+  - You can change the quantity on cart overlay or on cart page.
 3) Choose attributes of your product and add to your cart.
+  - If you choose same attribute and try to add product to cart , it will return an error "You have this product in cart".
 4) Change the currency of the store.
+  - There is curreny redux state , so you can change the currency via currency overlay on header globally.
 5) Preview the cart with the overlay with hover over the cart icon.
+  - There is cart overlay on header , you just need to hover over the cart icon.
 6) Filtering products with category links.
+  - You can choose categories on header.
 
 
 

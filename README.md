@@ -44,9 +44,9 @@ npm run build
 # Details 📄
 
 1) You can simply add products to your cart.
-  ➡ Click product card and it takes you product details page , you can choose your attributes and add to cart.
+  ```` Click product card and it takes you product details page , you can choose your attributes and add to cart. ````
 2) Change quantity of the product.
-  ➡ You can change the quantity on cart overlay or on cart page.
+  ```` You can change the quantity on cart overlay or on cart page. ````
 3) Choose attributes of your product and add to your cart.
   ➡ If you choose same attribute and try to add product to cart , it will return an error "You have this product in cart".
 4) Change the currency of the store.

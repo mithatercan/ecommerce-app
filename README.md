@@ -5,9 +5,9 @@
 ![](/Docs/overview.gif)
 
 <p float="left">
-  <img src="/Docs/pic1.png" width="200" />
-  <img src="/Docs/pic2.png" width="200" /> 
-  <img src="/Docs/pic4.png" width="200" />
+  <img src="/Docs/pic1.png" width="250" />
+  <img src="/Docs/pic2.png" width="250" /> 
+  <img src="/Docs/pic4.png" width="250" />
 </p>
 
 

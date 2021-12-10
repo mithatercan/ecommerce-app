@@ -1,7 +1,7 @@
 # Graphql Endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 
-# Preview Project 📹 
+# Overview Project 📹 
 ![](https://user-images.githubusercontent.com/71825314/145534352-a242c454-bedb-4aad-87b7-6c9bdd9b6448.gif)
 
 

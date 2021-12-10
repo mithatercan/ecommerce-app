@@ -2,13 +2,7 @@
 
 
 # Preview Project 📹 
-![](/Docs/overview.gif)
-
-<p float="left">
-  <img src="/Docs/pic1.png" width="250" />
-  <img src="/Docs/pic2.png" width="250" /> 
-  <img src="/Docs/pic4.png" width="250" />
-</p>
+![](https://user-images.githubusercontent.com/71825314/145534352-a242c454-bedb-4aad-87b7-6c9bdd9b6448.gif)
 
 
 # Intro 💡

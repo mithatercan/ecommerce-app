@@ -35,7 +35,7 @@ For production build:
 npm run build
 ```
 
-# Details 📄
+# Features ⭐
 
 1) You can simply add products to your cart.
    - Click product card and it takes you product details page , you can choose your attributes and add to cart.

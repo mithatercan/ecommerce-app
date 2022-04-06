@@ -12,7 +12,7 @@ This project is example of e-commerce web app that allows you to have some basic
 
 ## Setup 🔧
 
-First go clone this repository to run the server for endpoint [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
+First go clone this repository to run the server for the endpoints [Graphql Endpoint](https://github.com/mithatercann/GraphQL-endpoint).*
 
 ### Installation
 Clone this repo and go to the project folder and install required dependencies:
